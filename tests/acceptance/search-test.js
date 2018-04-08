@@ -69,6 +69,10 @@ test('pressing S key to focus the search bar', async function(assert) {
     await blur('[data-test-search-input]');
     await triggerKeyDown('KeyS');
     assert.dom('[data-test-search-input]').isFocused();
+
+    await blur('[data-test-search-input]');
+    await triggerKeyDown('shift+KeyS');
+    assert.dom('[data-test-search-input]').isFocused();
 });
 
 test('check search results are by default displayed by relevance', async function(assert) {
